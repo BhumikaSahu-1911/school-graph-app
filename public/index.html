@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pathways — School Course Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">§</span>
+      <div>
+        <h1>Pathways</h1>
+        <p class="brand-sub">a course &amp; study-path planner, drawn from the school graph</p>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="dashboard">Student Dashboard</button>
+      <button class="tab" data-tab="explorer">Course Explorer</button>
+    </nav>
+  </header>
+
+  <div id="connection-banner" class="banner hidden"></div>
+
+  <div class="stats-strip" id="stats-strip">
+    <div class="stat"><span class="stat-num" id="stat-students">–</span><span class="stat-label">Students</span></div>
+    <div class="stat"><span class="stat-num" id="stat-teachers">–</span><span class="stat-label">Teachers</span></div>
+    <div class="stat"><span class="stat-num" id="stat-courses">–</span><span class="stat-label">Courses</span></div>
+    <div class="stat"><span class="stat-num" id="stat-subjects">–</span><span class="stat-label">Subjects</span></div>
+  </div>
+
+  <main>
+    <!-- ===================== DASHBOARD TAB ===================== -->
+    <section id="dashboard" class="view active">
+
+      <aside class="roster">
+        <h2 class="roster-title">Roster</h2>
+        <input type="text" id="roster-search" class="roster-search" placeholder="Find a student…" />
+        <div id="student-list" class="roster-list">
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row"></div>
+        </div>
+      </aside>
+
+      <div class="report-card" id="report-card">
+        <div class="empty-state">
+          <span class="empty-glyph">🎓</span>
+          <p>Pick a student from the roster to open their report card.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================== EXPLORER TAB ===================== -->
+    <section id="explorer" class="view">
+      <div class="explorer-head">
+        <h2>Course Catalog</h2>
+        <p>Every stamped card below is one course. Click one to trace its prerequisite chain.</p>
+      </div>
+      <div id="course-grid" class="course-grid">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Prerequisite chain / course detail modal -->
+  <div id="modal-backdrop" class="modal-backdrop hidden">
+    <div class="modal" id="modal-content"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

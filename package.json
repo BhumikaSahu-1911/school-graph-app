@@ -1,0 +1,17 @@
+{
+  "name": "school-graph-app",
+  "version": "1.0.0",
+  "description": "School Course & Study-Path Planner backed by CognoDB (graph database)",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "seed": "node scripts/seed.js"
+  },
+  "dependencies": {
+    "neo4j-driver": "^5.24.0",
+    "express": "^4.19.2",
+    "dotenv": "^16.4.5",
+    "cors": "^2.8.5"
+  }
+}
